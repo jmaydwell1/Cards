@@ -1,0 +1,115 @@
+
+- (Class) Player: Creates Player and score for that player to compare the scores of other players
+    - (Method) __init__
+    - (Attributes) self.name, self.score
+    
+    - (Method)__lt__
+    - (Attributes) self.score, other.score
+    
+    - (Method) __eq__
+    - (Attributes) self.score, other.score
+
+- (Class) Card: Creates card images and helps to click the card to face up as well as facedown. This helps compare to other cards to find matching card
+    - (Method) __init__
+    - (Attributes) self.back_image, self.front_image, self.front_turtle, self.x
+                   self.y, self.faceup, self.active, self.manager
+
+    - (Method) setup
+    - (Attributes) self.front_turtle.up, self.front_turtle.shape, self.front_turtle.goto
+                   self.front_turtle.onclick, self.front_turtle.st
+
+    - (Method) deactivate
+    - (Attributes) self.activate, self.front_turtle.ht
+
+    - (Method) flip_faceup
+    - (Atrributes) self.front_turtle.shape, self.faceup
+
+    - (Method) flip_facedown
+    - (Attributes) self.front_turtle.shape, self.faceup
+
+    - (Method) process_click
+    - (Attributes) self.activate, self.faceup, self.flip_faceup, time.sleep,
+                   self.deactivate, self.flip_facedown, FLIPPED_CARD.flip_facedown
+                   PLAYERS.append
+    
+                   Global Variables: FLIPPED_CARD, CURRENT_GUESSES, MATCHES,
+                   NUM_CARDS, PLAYERS
+
+    - (Method) __str__
+    - (Attributes) self.front_image
+
+    - (Method) __eq__
+    - (Attributes) self, other
+
+- (Class) Position:
+
+    - (Method) __init__
+    - (Attributes) self.x, self.y
+
+
+- (Class) GameManager: draws the boxes for the gameboard as well as update the leaderboard from a file and processes card clicks
+
+    - (Method) __init__
+    - (Attributes) self.status, self.guesses, self.matches, self.players, self.name
+                   self.flip__card, self.window.setup, self.window.bgcolor
+
+    - (Method) process_card_click
+    - (Attributes) card.active, card.faceup, self.flip_card, card.flip_card, card.flip_faceup
+                   time.sleep, self, card.deactivate, self.flip_card.flip_facedown
+                   self.guesses, self.update_status, self.matches, self.num_cards
+                   self.players.append, self.write_scores
+
+    - (Method) draw_box
+    - (Attributes) box.pensize, box.penup, box.setposition, box.pdb, box.rt, box.fd
+                   box.lt
+
+    - (Method) read_scores
+    - (Attributes) path.exists, self.players.append, self.players.sort, file1.close
+
+-   - (Method) write_scores
+    - (Attributes) f.seek, self.players.sort, f.write, f.truncate, f.close
+
+    - (Method) print_players
+    - (Attributes) self.players, player.name, player.score
+
+    - (Method) quit_game
+    - (Attributes) turtle.bye
+
+    - (Method) update_status
+    - (Attributes) self.status_turtle.reset, self.status_turtle.penup, self.status_turtle.goto
+                   self.status_turtle.write, self.status_turtle.setx, self.status_turtle.ht
+
+- (Data Structures) Lists to take in number of cards for user input and
+                    then randomly sorted cards to random locations on the screen.
+                    The purpose of this was to create a random shuffle for the pair
+                    of cards distributed so it was not static game to game.
+
+                    Files were used to write player names and scores in file for memory
+                    and would be uploaded to the leader board if the player falls within
+                    the top six player scores. The leader board is updated at the start of
+                    every game with all previous scores.
+
+- (Testing):
+
+    I began testing by importing pdb to trace where each instance variables code was stored as well
+    as the methods it was implemented in. This allowed me to clean up the code in a more sustinct structure
+    affording more readibility of the code. After pdb to trace code I then tested user input error for card inputs
+    less than the required minimum 8 cards. I specifically inputed 4 and a message stating that user must a number
+    of cards greater than 8 was displayed. Next, I tested user input error by inputing a number of 20 for card input
+    and a message stating that a maximum value of 12 cards is allowed was displayed. Finally, I tested user error by
+    inputing odd numbers of 9 and then 11. It defaulted to increasing the input by one to the nearest even number, so 9
+    became 10 and 11 became 12. Once testing for card input was completed I tested the card clicks which worked as well
+    the quit button click working to quit the game and prevent the players score from being saved in memory. The leader
+    board was then tested at the start of the game being run to see if the previous player's scores were uploaded. Lastly,
+    the number of guesses and matches were tested during the game when clicking on cards to assure that each were properly
+    updated on each match and guess showing it correctly tracked both measures. 
+    
+
+
+
+
+
+                   
+
+
+                   
